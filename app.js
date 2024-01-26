@@ -1,5 +1,5 @@
 let numeroSecreto = generarNumeroSecreto();
-console.log(numeroSecreto);
+console.log(`El número sercreto es: ${numeroSecreto}`);
 
 function generarNumeroSecreto() {
     return Math.trunc(Math.random()*10)+1;    
@@ -13,10 +13,15 @@ function asignarTextoElemento(elemento, texto) {
 
 function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
-    console.log(`El tipo de dato para numeroDeUsuario es: ${typeof(numeroDeUsuario)}`);
+    //console.log(`El tipo de dato para numeroDeUsuario es: ${typeof(numeroDeUsuario)}`);
     if (numeroDeUsuario === numeroSecreto) {
-        console.log(`El tipo de dato comparado es: ${typeof(numeroDeUsuario === numeroSecreto)}`);
-        alert(`Acertaste. El número secreto es: ${numeroSecreto}`);
+        //console.log(`El tipo de dato comparado es: ${typeof(numeroDeUsuario === numeroSecreto)}`);
+        asignarTextoElemento('p', `Acertaste. El número secreo es: ${numeroSecreto}`)
+        //alert(`Acertaste. El número secreto es: ${numeroSecreto}`);
+    } else if(numeroDeUsuario > numeroSecreto){
+        asignarTextoElemento('p', `El número secreo es menor a ${numeroDeUsuario}`)
+    } else{
+        asignarTextoElemento('p', `El número secreo es mayor a ${numeroDeUsuario}`)
     }
     return;
 }
