@@ -12,18 +12,25 @@ function asignarTextoElemento(elemento, texto) {
     return;
 }
 
+function limpiarCaja() {
+    //let limpiarInput = 
+    document.getElementById('valorUsuario').value = '';    
+}
+
 function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     //console.log(`El tipo de dato para numeroDeUsuario es: ${typeof(numeroDeUsuario)}`);
     console.log(intentos);
     if (numeroDeUsuario === numeroSecreto) {        
-        asignarTextoElemento('p', `Acertaste, el número secreo es: ${numeroSecreto}. Lo hiciste en ${intentos} ${intentos == 1 ? ' intento.' : ' intentos.'}`);        
+        asignarTextoElemento('p', `Acertaste, el número secreo es: ${numeroSecreto}. Lo hiciste en ${intentos} ${intentos == 1 ? ' intento.' : ' intentos.'}`); 
+        document.getElementById('reiniciar').removeAttribute('disabled');
     } else if(numeroDeUsuario > numeroSecreto){
         asignarTextoElemento('p', `El número secreo es menor a ${numeroDeUsuario}`)
     } else{
         asignarTextoElemento('p', `El número secreo es mayor a ${numeroDeUsuario}`)
     }
     intentos++;
+    limpiarCaja();
     return;
 }
 
