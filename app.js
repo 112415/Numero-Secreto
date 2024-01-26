@@ -1,7 +1,8 @@
+let numeroMaximo = 10;
 let numeroSecreto = 0;
 let intentos = 0;
 let listaGenerada = [];
-let numeroMaximo = 10;
+
 
 function condicionesIniciales() {
     //Resetear texto inicial
