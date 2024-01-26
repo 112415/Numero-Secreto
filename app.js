@@ -1,5 +1,6 @@
 let numeroSecreto = 0;
 let intentos = 0;
+let listaGenerada = [];
 
 function condicionesIniciales() {
     //Resetear texto inicial
@@ -7,7 +8,7 @@ function condicionesIniciales() {
     asignarTextoElemento('p', 'Indica un número del 1 al 10');
     //Resetear numero secreto
     numeroSecreto = generarNumeroSecreto();
-    console.log(`El número sercreto es: ${numeroSecreto}`);
+    //console.log(`El número sercreto es: ${numeroSecreto}`);
     //Resetear intentos
     intentos = 1;
     //Limpiar caja input
@@ -21,7 +22,16 @@ function reinciarJuego() {
 }
 
 function generarNumeroSecreto() {
-    return Math.trunc(Math.random()*10)+1;    
+    let numeroGenerado = Math.trunc(Math.random()*10)+1;
+    
+    console.log(`Número Secreto: ${numeroGenerado}`);
+    console.log(`Lista Generada: ${listaGenerada}`);
+    if(listaGenerada.includes(numeroGenerado)){
+        return generarNumeroSecreto();
+    }else{
+        listaGenerada.push(numeroGenerado);
+        return numeroGenerado;
+    }
 }
 
 function asignarTextoElemento(elemento, texto) {
