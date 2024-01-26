@@ -1,6 +1,5 @@
 let numeroSecreto = 0;
 let intentos = 0;
-//console.log(`El número sercreto es: ${numeroSecreto}`);
 
 function condicionesIniciales() {
     //Resetear texto inicial
@@ -32,7 +31,6 @@ function asignarTextoElemento(elemento, texto) {
 }
 
 function limpiarCaja() {
-    //let limpiarInput = 
     document.getElementById('valorUsuario').value = '';    
 }
 
